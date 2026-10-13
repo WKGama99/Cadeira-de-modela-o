@@ -38,4 +38,19 @@ h = ((G * M * (T**2)) / (4 * np.pi**2))**(1/3) - R
 
 print(f"A altitude necessária do satélite é: {h:.2f} metros")
 
+#%%
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+dias = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
+temperatura = [20, 21, 22, 23, 24, 25, 26]
+
+plt.plot(dias, temperatura, marker= "o", color= "blue", linestyle= "--", linewidth=2)
+plt.title("Temperatura durante a semana")
+plt.xlabel("Dias da semana")
+plt.ylabel("Temperatura (ºC)")
+
+
+plt.show()
 # %%

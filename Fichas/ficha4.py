@@ -96,7 +96,7 @@ for i in range(len(erros) - 1):
     razao = erros[i] / erros[i + 1]
     print(f"Erro(N={NN[i]}) / Erro(N={NN[i+1]}) = {razao:.2f}")
 # %%
-#Exercício 2 alínea d)
+#Exercício 3 alínea d)
 
 import numpy as np
 
@@ -109,4 +109,29 @@ for k in range(1, 16):
     )
 
 #h = 1e-5  estimativa = 0.540302305856999 erro = 1.1e-11
+# %%
+#Exercício 4 alínea a)
+
+import numpy as np
+import matplotlib.pyplot as plt
+data = np.loadtxt("tanque_fuga.csv", delimiter=",", skiprows=1)
+t = data [:, 0]
+h = data [:, 1]
+
+q_medido = -np.gradient(h, t)  
+q_tubo = h / 50.0
+q_fuga = (q_medido - q_tubo) * 1000
+print("Caudal da fuga calculado:")
+print(q_fuga)
+
+
+
+plt.figure(figsize=(8, 4))
+plt.plot(t, q_fuga, 'o-', color='red', label="Caudal da Fuga (L/s)")
+plt.title(" Caudal da Fuga em Função do Tempo")
+plt.xlabel("Tempo (s)")
+plt.ylabel("Caudal (L/s)")
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+plt.show()
 # %%
