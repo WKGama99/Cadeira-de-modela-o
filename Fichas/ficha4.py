@@ -40,14 +40,16 @@ print(np.round(erro, 4 ))
 
 # %%
 #Exercício 1 alínea d) 
-print(f"Instante quando a bola atinge a altura máxima: {np.argmin (np.abs(v_exata))}")
-print(f"Tempo em que v=o: {t[0]}s")
+indice_altura_maxima = np.argmax(y)
+indice_velocidade_zero = np.argmin(np.abs(v_exata))
+print(f"Instante em que a bola atinge a altura máxima: {t[indice_altura_maxima]} s")
+print(f"Instante em que a velocidade é mais próxima de zero: {t[indice_velocidade_zero]} s")
 
 #%%
 #Exercício 2 alínea a)
 import numpy as np 
 for N in [11, 21, 41, 81]:
-    t = np.linspace(0, 2* np.pi, N)
+    t = np.linspace(0, 2 * np.pi, N)
     f = np.sin(t)
     df_exata = np.cos(t)
     df_num = np.gradient(f, t)

@@ -40,7 +40,7 @@ t, v = dados[:, 0], dados[:, 1]
 # =============================================================================
 # PARTE A — Leitura dos dados e deteção do arranque
 # =============================================================================
-# TODO A(a): número de leituras, passo temporal e último instante do registo
+#TODO A(a): número de leituras, passo temporal e último instante do registo
 N = len(t)
 dt = t[1] - t[0]
 t_final = t[-1]

@@ -1,0 +1,247 @@
+#LEN - Funcao do python que devolve a quantidade de itens que tem numa lista, determinando o seu tamanho 
+#quando usar:
+#Quando precisa de saber a quantidade exata de itens que tem para processar.
+#É muito usado para saber o tamanho de uma lista antes de a analisar ou para saber quantas linhas tem um ficheiro de dados.
+
+#Como usar:
+#leituras_sensor = [10.5, 12.1, 11.3, 15.0]
+#quantidade = len(leituras_sensor)
+#print(f"Foram feitas {quantidade} leituras.") 
+# Resultado: Foram feitas 4 leituras.
+
+
+
+#DEF - Palavra-chave nativa do Python utilizada exclusivamente para declarar e construir novas funções personalizadas de código reutilizável.
+#quando usar- Quando tem um calculo ou uma serie de passos que precisa de usar varias vezes em partes diferentes do codigo.
+# Em vez de copiar e colar, cria uma funcao com def e chama-a sempre que precisasr
+#como usar:
+#def calcular_energia_cinetica(massa, velocidade);
+#energia = 0.5 * massa * (velocidade ** 2)
+#return energia
+
+#chamar maais tarde no codigo 
+#energia_carro = calcular_energia_cinetica(1000,20)
+#print(f"Energia: {energia_carro} Joules")
+
+
+#NP.MEAN - retorna a media aritemetica de todos os numeros presentes num array
+#Quando usar: Para encontrar o valor médio (a média aritmética) de um grande conjunto de dados numéricos.
+#Muito útil para suavizar dados, descobrir a temperatura média, velocidade média, etc.
+#Como usar:
+#Python
+#import numpy as np
+
+#temperaturas = np.array([20.0, 22.5, 24.0, 21.0])
+#media = np.mean(temperaturas)
+
+#print(f"A temperatura média é {media} graus.") 
+# Resultado: A temperatura média é 21.875 graus.
+
+#NP.STD -Calcula o desvio-padrão de um conjunto de dados, quantificando a variação ou a dispersão dos valores numéricos em relação à sua média.
+#Quando usar: Para descobrir se os seus dados são muito inconstantes. Se o valor for próximo de zero, 
+#significa que os valores estão todos muito perto da média (sensor estável). Se for alto, os valores oscilam muito (sensor com muito ruído).
+#Como usar:
+#Python
+#import numpy as np
+
+# Sensor de velocidade que deveria estar a marcar zero
+#sensor_parado = np.array([0.01, -0.02, 0.00, 0.03, -0.01])
+#ruido = np.std(sensor_parado)
+
+#print(f"O ruído/desvio-padrão do sensor é {ruido:.4f} m/s.")
+
+#NP.ARGMAX - Devolve o índice (posição) do valor mais alto num array; se usado com uma condição lógica, 
+#identifica a posição do primeiro elemento que a cumpre.
+
+#Quando usar: Tem dois usos principais: descobrir onde (em que posição) está o valor máximo num conjunto de dados, ou descobrir quando acontece a primeira alteração de estado (como no seu código, a primeira vez que a velocidade é maior que 0.1).
+#Como usar:
+#Python
+#import numpy as np
+
+#velocidades = np.array([0, 1.5, 8.2, 5.0, 2.1])
+
+# Uso 1: Onde está a velocidade máxima?
+#indice_maximo = np.argmax(velocidades)
+#print(f"O pico de velocidade está na posição {indice_maximo}.") # Posição 2 (o valor 8.2)
+
+# Uso 2: Quando é que a velocidade superou os 4 m/s pela primeira vez?
+#indice_arranque = np.argmax(velocidades > 4)
+#print(f"Superou 4 m/s na posição {indice_arranque}.") # Posição 2
+
+
+#NP.ZEROS - Gera um novo array do tamanho especificado preenchido inteiramente com zeros,
+ #servindo para alocar memória e criar estruturas antes de armazenar resultados.
+ #Quando usar: Quando sabe de antemão quantos resultados vai calcular e precisa de criar uma "caixa" vazia com esse tamanho exato para guardar os valores à medida que os calcula. É muito mais rápido para o computador do que criar uma lista vazia e ir adicionando elementos um a um.
+#Como usar:
+#Python
+#import numpy as np
+
+# Criar um array com 5 posições, preenchidas com zero
+#resultados = np.zeros(5)
+
+# Guardar um valor calculado na primeira posição (índice 0)
+#resultados[0] = 3.14
+
+#print(resultados) 
+# Resultado: [3.14  0.  0.  0.  0. ]
+
+#NP.SUM -Soma rapidamente todos os elementos de um array, podendo também somar valores agrupados apenas em linhas ou colunas específicas.
+#Quando usar: Para calcular o valor total acumulado de um array. É útil para calcular totais (como chuva acumulada, energia consumida, ou distância percorrida somando pequenos deslocamentos).
+#Como usar:
+#Python
+#import numpy as np
+
+#chuva_diaria_mm = np.array([12.5, 5.0, 0.0, 2.5, 10.0])
+#chuva_total = np.sum(chuva_diaria_mm)
+
+#print(f"Choveu um total de {chuva_total} mm esta semana.")
+# Resultado: Choveu um total de 30.0 mm esta semana.
+
+
+#como ativar venv nos terminais
+#source venv/bin/activate
+
+
+
+#como instalar bibliotecas no numpy
+#pip install numpy
+
+
+#como instalar bibliotecas do matplotlib
+#pip install matplolib
+
+
+
+TERORICA    
+
+
+a) Pela 2ª Lei de Newton, a soma das forças é igual à massa vezes a aceleração (F=ma). 
+O rebocador tem uma força a puxar para a frente (F) e duas a travar: o atrito (μmg) e a resistência do motor (bv).   
+
++ 1
+Equação: F−μmg−bv=ma.   
+
+Dividindo tudo por m, ficamos com a fórmula pedida: a= F/M - μg - b/m v.
+
+
+(b) Substituindo pelos valores da tabela:   
+
+F/m=600/600=1,0 m/s **2
+   
+
+μg=0,02×9,81=0,1962 m/s **2
+ 
+
+b/m=240/600=0,4 s **−1
+ 
+
+No instante inicial (v=0), a aceleração é: a=1,0−0,1962−(0,4×0)=0,8038 m/s **2
+
+Exercício 2: Método de Euler
+O Método de Euler é apenas prever o futuro dando "pequenos passos" no tempo (Δt=0,5 s). A fórmula da velocidade é v 
+i+1​ =vi +ai * Δt.   
+t=0,0: v=0,000 (repouso) | a=0,804 (calculado acima).   
+
+t=0,5: v=0+(0,8038×0,5)=0,402 | a=0,8038−(0,4×0,4019)=0,643.   
+
+t=1,0: v=0,4019+(0,643×0,5)=0,723 | a=0,8038−(0,4×0,723)=0,515.   
+
+t=1,5: v=0,723+(0,5146×0,5)=0,980.   
+
+Exercício 3: Diferenças finitas
+Vamos usar os dados da tabela para calcular as velocidades em t=2,0:   
+
+(a) Progressiva (olha para a frente):  
+
+1,4809−1,2526 / 0.2
+​	
+ =1,1415 m/s.   
+
+(a) Regressiva (olha para trás):  
+1,2526−1,0387 /0.2
+​	
+ =1,0695 m/s.   
+
+
+(a) Central (olha para ambos os lados):  
+1,4809−1,0387/0.4
+​	
+ =1,1055 m/s.   
+
+(b) A diferença progressiva aproxima-se melhor de v(2,1), a regressiva de v(1,9) e a central de v(2,0). 
+Isto acontece porque o cálculo com dois pontos dá-nos a velocidade média, que corresponde melhor ao ponto médio desse intervalo.   
+
+
+Exercício 4: Ordem de convergência
+(a) Ao dividir os erros seguidos (0,0300/0,0147≈2), reparamos que sempre que o passo de tempo é cortado a meio,
+ o erro também cai para metade. Concluímos que o método é de 1ª ordem.   
+
+
+(b) Para o erro ficar abaixo de 0,001 m/s, temos de continuar a dividir o passo:   
+
+Erro 0,0036→ Passo 0,025.   
+
+Erro ≈0,0018→ Passo 0,0125.
+Erro ≈0,0009→ Passo 0,00625 (este é o passo necessário).
+
+
+
+
+
+
+
+Python
+# TODO A(a): número de leituras e passo temporal
+N = len(t)
+dt = t[1] - t[0]
+
+# TODO A(b): velocidade com np.gradient
+v = np.gradient(x, t)
+
+# TODO A(c): velocidade média em cruzeiro (t < 0,9 s)
+v_cruzeiro = np.mean(v[t < 0.9])
+
+PARTE B — Aceleração e ruído
+Aqui precisas de "saltar" os dados de k em k (subamostragem). O Python faz isso usando [::k]. Depois, derivas a posição para obter a velocidade e a velocidade para obter a aceleração.
+Python
+# TODO B(a): subamostrar e derivar duas vezes com np.gradient
+tk = t[::k]
+xk = x[::k]
+vk = np.gradient(xk, tk)
+ak = np.gradient(vk, tk)
+
+# ... (dentro do ciclo for) ...
+
+# TODO B(b): desvio-padrão de ak quando o AGV já está parado (tk > 4,5 s)
+desvio = np.std(ak[tk > 4.5])
+
+
+PARTE C — Identificação dos parâmetros do modelo
+A equação dada é a=−μg−(b/m)v. Isto é uma reta do tipo y=mx+b, onde o declive é −(b/m) e a ordenada na origem é −μg.
+Python
+# TODO C(a): declive e ordenada na origem da reta que passa pelos dois pontos
+declive = (ak[i2] - ak[i1]) / (vk[i2] - vk[i1])
+b_m = -declive
+mu_g = -(ak[i1] - declive * vk[i1])
+Para a escolha do K:
+Python
+# TODO C(b): escolha o valor de k que considera mais fiável (justifique no relatório)
+K = 15
+Justificação para o relatório: Valores de k muito pequenos (como 1 ou 2) amplificam o ruído numérico da derivação, tornando os resultados inconsistentes. Valores demasiado grandes (como 25) perdem resolução temporal e cortam a dinâmica real da travagem. O valor 15 costuma oferecer um bom compromisso (filtra o ruído sem distorcer o sinal principal).
+
+
+PARTE D — Simulação com o método de Euler
+O método de Euler calcula o próximo valor somando ao valor atual a taxa de variação multiplicada pelo passo de tempo (dt).
+Python
+def aceleracao(v, mu_g, b_m):
+    # TODO D(a): aceleração do modelo
+    return -mu_g - b_m * v
+
+# ... (dentro da função simular) ...
+
+        # TODO D(b): passo de Euler para v e x
+        v_novo = v_s[-1] + a * dt
+        x_novo = x_s[-1] + v_s[-1] * dt
+        
+        # TODO D(c): condição de paragem
+        if parar and v_novo <= 0:

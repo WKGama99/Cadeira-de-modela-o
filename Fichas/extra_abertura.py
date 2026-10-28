@@ -76,9 +76,9 @@ def velocidade_aterragem(h_abertura, t_enchimento):
 
 def altitude_minima(t_enchimento, alturas):
     """Menor altitude de abertura (entre as 'alturas' testadas) com aterragem segura."""
-    # TODO: percorrer as alturas por ordem crescente e devolver a primeira segura
+    # Percorre as alturas por ordem crescente e devolve a primeira aterragem segura.
     for h in alturas:
-        if ...: # se a velocidade de aterragem estiver abaixo da velocidade segura; retorne a altura
+        if velocidade_aterragem(h, t_enchimento) < V_SEGURA:
             return h
     return np.nan
 
